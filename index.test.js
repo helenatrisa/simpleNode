@@ -1,11 +1,13 @@
-// index.test.js
-const { expect } = require('chai');
-const index = require('./index');
+// Import the module you want to test
+const { add, subtract } = require('./index');
+const  {expect}  = require('@jest/globals');
 
-describe('index.js', () => {
-  it('should output text', () => {
-    const output = index();
-    expect(output).to.be.a('string');
-    // Add additional assertions as needed
+describe('Calculator', () => {
+  it('should add two numbers correctly', () => {
+    expect(add(1, 2)).toEqual(3);
+  });
+
+  it('should subtract two numbers correctly', () => {
+    expect(subtract(5, 3)).toEqual(2);
   });
 });
