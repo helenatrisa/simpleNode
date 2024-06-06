@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+triggers {
+    githubPush()
+  }
     environment {
         REPO_URL = 'https://github.com/helenatrisa/simpleNode.git'  // URL repositori
         DEPLOY_SERVER = 'root@202.10.41.24'  // Ganti dengan informasi server deploy Anda
