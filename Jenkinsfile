@@ -4,7 +4,7 @@ pipeline {
     environment {
         REPO_URL = 'https://github.com/helenatrisa/simpleNode.git'  // URL repositori
         DEPLOY_SERVER = 'root@202.10.41.24'  // Ganti dengan informasi server deploy Anda
-        DEPLOY_PATH = '/var/www/html/simpleNode'  // Ganti dengan path deploy di server Anda
+        DEPLOY_PATH = '/var/www/html/simpleNode/'  // Ganti dengan path deploy di server Anda
         APP_NAME = 'simpleNode'  // Nama aplikasi Anda
     }
 
