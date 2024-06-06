@@ -27,31 +27,31 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-            steps {
-                script {
-                    // Archive application files
-                    sh """
-                    tar -czf ${APP_NAME}.tar.gz *
-                    """
+        // stage('Deploy') {
+        //     steps {
+        //         script {
+        //             // Archive application files
+        //             sh """
+        //             tar -czf ${APP_NAME}.tar.gz *
+        //             """
                     
-                    // Copy archive to the deployment server
-                    sh """
-                    scp ${APP_NAME}.tar.gz ${DEPLOY_SERVER}:${DEPLOY_PATH}
-                    """
+        //             // Copy archive to the deployment server
+        //             sh """
+        //             scp ${APP_NAME}.tar.gz ${DEPLOY_SERVER}:${DEPLOY_PATH}
+        //             """
                     
-                    // Extract archive and install production dependencies on the deployment server
-                    sh """
-                    ssh ${DEPLOY_SERVER} '
-                        cd ${DEPLOY_PATH} &&
-                        tar -xzf ${APP_NAME}.tar.gz &&
-                        npm install --production &&
-                        pm2 restart ${APP_NAME} || pm2 start server.js --name ${APP_NAME}
-                    '
-                    """
-                }
-            }
-        }
+        //             // Extract archive and install production dependencies on the deployment server
+        //             sh """
+        //             ssh ${DEPLOY_SERVER} '
+        //                 cd ${DEPLOY_PATH} &&
+        //                 tar -xzf ${APP_NAME}.tar.gz &&
+        //                 npm install --production &&
+        //                 pm2 restart ${APP_NAME} || pm2 start server.js --name ${APP_NAME}
+        //             '
+        //             """
+        //         }
+        //     }
+        // }
     }
 
     post {
