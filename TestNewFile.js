@@ -1,7 +1,8 @@
 const aba = () => {
-console.log("YAY")
+  const YAY = "YAY";
+console.log(YAY)
 
-  
+
 }
 
 
