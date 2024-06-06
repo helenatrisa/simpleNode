@@ -1,6 +1,4 @@
 const aba = () => {
-  const YAY = "YAY";
-console.log(YAY)
 
 
 }
